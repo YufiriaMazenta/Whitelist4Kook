@@ -4,22 +4,21 @@ plugins {
 }
 
 group = "pers.yufiria"
-version = "1.0.1"
+version = "1.0.3"
 
 repositories {
     mavenCentral()
-    maven("http://repo.crypticlib.com:8081/repository/maven-public/") {
-        isAllowInsecureProtocol = true
-    }
+    maven("https://repo.crypticlib.com:8081/repository/maven-public/")
     maven("https://jitpack.io")
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/groups/public/")
 }
 
 dependencies {
+    compileOnly("org.jetbrains:annotations:24.0.1")
     compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
     compileOnly("mysql:mysql-connector-java:8.0.29")
-    compileOnly("pers.yufiria:KookMC:1.0.0")
+    compileOnly("pers.yufiria:KookMC:1.0.4")
     implementation("com.crypticlib:common:0.18.10")
     implementation("com.zaxxer:HikariCP:5.1.0")
 }

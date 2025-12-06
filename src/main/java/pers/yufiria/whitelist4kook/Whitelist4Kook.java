@@ -1,5 +1,6 @@
 package pers.yufiria.whitelist4kook;
 
+import pers.yufiria.kookmc.KookMCAPI;
 import pers.yufiria.whitelist4kook.config.Configs;
 import pers.yufiria.whitelist4kook.data.DataManager;
 import pers.yufiria.whitelist4kook.data.HikariCPUtil;
@@ -28,7 +29,7 @@ public final class Whitelist4Kook extends BukkitPlugin {
     }
 
     private void regWhitelistCmd() {
-        KookMC.getInstance().regKookCommand(new JKookCommand("whitelist", "/")
+        KookMCAPI.registerCommand(new JKookCommand("whitelist", "/")
                 .addAlias("wl")
                 .executesUser((user, arguments, message) -> {
                     if (!isChannelAllowBind((ChannelMessage) message))
